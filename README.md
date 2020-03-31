@@ -1,5 +1,5 @@
 # Original experimentally specific implementation of [AutoDot](https://github.com/oxquantum-repo/AutoDot)
-### If you want to perform automated tuning it is highly recommended that you use the [AutoDot](https://github.com/oxquantum-repo/AutoDot) which is a very configurable refactored implementation of this repo.
+### If you want to perform automated tuning it is highly recommended that you use [AutoDot](https://github.com/oxquantum-repo/AutoDot) which is a very configurable refactored implementation of this repo.
 
 **NOTE: DUE TO MULTIPROCESSING PACKAGE THE CURRENT IMPLEMENTATION ONLY WORKS ON UNIX/LINUX OPERATING SYSTEMS**
 
