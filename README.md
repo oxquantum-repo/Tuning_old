@@ -8,11 +8,12 @@ The quantum devices used to implement spin qubits in semiconductors can be chall
 # Prerequisites
 It needs following python packages. Use anaconda or pip to install them.
 ```
-numpy
 scipy
+numpy
 matplotlib
+GPy
+mkl
 pyDOE
-GPy # when to use GPy
 ```
 
 # Running the algorithm
