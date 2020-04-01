@@ -56,7 +56,7 @@ def save(save_dir, vols_poff_all, u_all, EI_all, r_all, d_all, vols_poff_axes_al
         np.save(str(save_dir / 'dropped.npy'), dropped)
 
 def main():
-    conf_name = 'config2'
+    conf_name = 'dummy'
     if conf_name == 'config1':
         conf_func = config.config1
         ip = "http://129.67.86.107:8000/RPC2"
@@ -126,7 +126,7 @@ def main():
     #threshold_low = 0.2 * (max_current - min_current) + min_current
     step_back = 100 # important param for measuring d
     len_after_pinchoff=50
-    num_samples = 2000 # number of initial samples (by Latin hypercube design)
+    num_samples = 100 # number of initial samples (by Latin hypercube design)
 
     detector_pinchoff = util.PinchoffDetectorThreshold(threshold_low) # pichoff detector
     detector_conducting = util.ConductingDetectorThreshold(threshold_high) # reverse direction
@@ -136,8 +136,8 @@ def main():
     ###
     # Set a problem and a model
     ###
-    do_extra_meas = lambda vols, th: config_model.do_extra_meas(pg, vols, th)
-    #do_extra_meas = None
+    #do_extra_meas = lambda vols, th: config_model.do_extra_meas(pg, vols, th)
+    do_extra_meas = None
 
     ###
     # Gaussian process for r
@@ -324,8 +324,8 @@ def do_random_meas(num_active_gates, num_samples, tester, step_back, origin, lb_
         t1 = time.time() - t
         path_all.append((r_est or origin, vols_pinchoff))
 
-        #if gp_availble:
-        #    time.sleep(5)
+        if gp_availble:
+            time.sleep(5)
 
         if len(r_all) >= num_dvec: axes=[] # do not measure d vector
         d_vec, poff_vec, meas_each_axis, vols_each_axis = tester.measure_dvec(vols_pinchoff+step_back, axes=axes)
