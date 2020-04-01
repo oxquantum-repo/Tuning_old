@@ -102,6 +102,7 @@ def main():
     active_gate_names = ["c{}".format(i+1) for i in active_gate_idxs]
     print(active_gate_names)
 
+    ''' Disable grouped gates
     new_wires = [[1, 0, 0, 0, 0, 0, 0],
          [0, 1, 0, 0, 0, 0, 1],
          [0, 0, 1, 0, 0, 1, 0],
@@ -110,6 +111,7 @@ def main():
     lb_short = lb_short[:4]
     ub_short = ub_short[:4]
     num_active_gates = len(new_wires)
+    '''
 
     # choose the origin
     if np.isscalar(origin):
